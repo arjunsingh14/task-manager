@@ -1,10 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Logobar from './components/Logobar';
+import Form from './components/Form';
+import { useState } from 'react';
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+
   return (
     <div className="App">
-      
+      <Logobar/>
+      <Form/>
     </div>
   );
 }
