@@ -212,7 +212,6 @@ $theme-color: #1da1f2;
   }
 }
 
-
 #tasks {
   text-align: center;
   margin-top: 75px;
@@ -221,7 +220,7 @@ $theme-color: #1da1f2;
   grid-template-areas: "header header header";
   padding:25px 50px 25px 50px;
   h2 {
-    grid-area: header;
+      grid-area: header;
       font-size: 1.7rem;
       color: #1da1f2;
     }
