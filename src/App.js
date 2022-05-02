@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => {
     window.localStorage.setItem("tasks", JSON.stringify(tasks));
+    console.log(tasks);
   }, [tasks]);
 
   const removeTask = (id) => {
@@ -21,7 +22,7 @@ function App() {
     <div className="App">
       <Logobar />
       <Form setTasks={setTasks} tasks={tasks} />
-      <Tasks tasks={tasks} remove={removeTask} />
+      {tasks.length !== 0 ? (<Tasks tasks={tasks} remove={removeTask}/>) : <h1 id="no-task">No tasks</h1>}
     </div>
   );
 }

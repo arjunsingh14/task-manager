@@ -19,7 +19,7 @@ const Form = ({setTasks, tasks}) => {
       console.log(tasks)
     }
     else {
-      console.log("error")
+      console.log("error");
     }
   }
 
