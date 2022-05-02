@@ -131,10 +131,8 @@ table {
 }
 
 ::-webkit-calendar-picker-indicator {
-    filter: invert(1);
+  filter: invert(1);
 }
-
-
 
 $theme-color: #1da1f2;
 
@@ -166,6 +164,7 @@ $theme-color: #1da1f2;
   }
   form {
     border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
     width: 500px;
     background-color: #1da1f2;
@@ -186,34 +185,97 @@ $theme-color: #1da1f2;
         border-bottom: solid;
         border-color: white;
       }
-      
+      button {
+        color: white;
+        font-size: 1rem;
+        font-weight: 900;
+        background-color: $theme-color;
+        padding: 10px 15px 10px 15px;
+        border: solid;
+        border-color: white;
+        border-width: 2px;
+        border-radius: 20px;
+        transition: background-color 0.5s ease;
+        transition: color 0.5s ease;
+      }
+      button:hover {
+        background-color: white;
+        color: $theme-color;
+      }
       input:focus,
       select:focus,
       textarea:focus,
       button:focus {
         outline: none;
       }
-
-      
     }
   }
-  
 }
 
-@media (max-width: 500px) {
-    article{
-        text-align: center;
+
+#tasks {
+  text-align: center;
+  margin-top: 75px;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-areas: "header header header";
+  padding:25px 50px 25px 50px;
+  h2 {
+    grid-area: header;
+      font-size: 1.7rem;
+      color: #1da1f2;
     }
-      #task-form {
-          width: auto;
-          
-      }
-    #form-label{width: auto;  font-size: 1.2rem;}
-    .input-sect{
-        margin: 20px;
-        label{font-size: 0.9rem;}
-        input {
-            min-width: 5%;
-        }
+  
+  div {
+    justify-self: center;
+    margin: 10px;
+    padding: 20px 10px 20px 10px;
+    width: 80%;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    
+    button {
+      margin-top:7px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 900;
+      background-color: $theme-color;
+      padding: 10px 15px 10px 15px;
+      border: solid;
+      border-color: white;
+      border-width: 2px;
+      border-radius: 20px;
+      transition: background-color 0.5s ease;
+      transition: color 0.5s ease;
     }
   }
+}
+
+
+@media (max-width: 500px) {
+  article {
+    text-align: center;
+  }
+  #task-form {
+    width: auto;
+  }
+  #form-label {
+    width: auto;
+    font-size: 1.2rem;
+  }
+  .input-sect {
+    margin: 20px;
+    label {
+      font-size: 0.9rem;
+    }
+    input {
+      min-width: 5%;
+    }
+  }
+  #tasks {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
